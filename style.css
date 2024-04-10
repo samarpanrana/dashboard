@@ -1,8 +1,9 @@
 :root {
-    --primary1: skyblue;
+    --primary1: #52a6c7;
     --primary2: #fcf2da;
     --secondary1: #dadada;
     --secondary2: #2626b6;
+    --secondary3: #ffffff;
 }
 
 *,
@@ -33,6 +34,10 @@ body {
     row-gap: 16px;
 
     background-color: var(--primary2);
+}
+
+.header span {
+    cursor: pointer;
 }
 
 .search-container {
@@ -70,6 +75,7 @@ body {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .profile-info {
@@ -117,11 +123,41 @@ body {
     grid-column:  1 / 2;
 
     background-color: var(--primary1);
+    padding: 1rem 2rem;
+    color:var(--secondary3);
+    font-size: 1.25rem;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.dashboard-sidebar {
+    font-size: 1.75rem;
+}
+
+.sidebar > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.sidebar > div > div {
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+}
+
+.sidebar > div > div i {
+    width: 1.5rem;
 }
 
 .content {
     grid-column: 2 / 3;
 }
+
+
 
 @media screen and (max-width: 650px) {
     .header {
