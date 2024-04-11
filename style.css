@@ -17,7 +17,7 @@
 body {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 4fr;
     font-family: "Roboto", sans-serif;
 }
@@ -154,17 +154,82 @@ body {
 }
 
 .content {
+    padding: 32px 0;
     grid-column: 2 / 3;
+
+    display: grid;
+    grid-template-columns: 4fr 1fr;
 }
 
+.projects {
+    position: relative;
+    grid-row: 1 / 3;
 
+    padding: 32px 16px 32px 32px;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 200px;
+}
 
-@media screen and (max-width: 650px) {
-    .header {
-        grid-column: span 2;
-    }
+.projects h2,
+.announcements h2,
+.trending h2{
+    position: absolute;
+    left: 32px;
+    top: -16px;
+}
 
-    .sidebar {
-        grid-row: 2 / 3;
-    }
+.trending h2,
+.announcements h2 {
+    left: 0px;
+}
+
+.project {
+    border-radius: 8px;
+    box-shadow: -4px 0px 4px black;
+    color: var(--secondary3);
+    background-color: var(--primary1);
+
+    display: grid;
+    grid-template-rows: 1fr;
+    padding: 16px;
+    height: 200px;
+}
+
+.project-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+}
+
+.project-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+}
+
+.project-buttons > * {
+    cursor: pointer;
+}
+
+.project h3 {
+    font-weight: bolder;
+}
+
+.announcements,
+.trending {
+    position: relative;
+    padding: 32px 16px 32px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.announcements span,
+.trending span {
+    border-radius: 4px;
+    background-color: var(--secondary1);
+    border-bottom: 1px solid black;
+    padding: 16px;
 }
